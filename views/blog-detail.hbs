@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../public/assets/fontawesome/css/all.css" />
+    
+    <link rel="stylesheet" href="../public/assets/css/blog.css"/>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="../public/assets/css/blog.css" rel="stylesheet"/>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+    <div class="container-xxl pe-4 ps-4">
+      <a class="navbar-brand me-5" href="#"><img src="../public/assets/image/logo.png"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project">Add My Project </a>
+          </li>
+
+          </li>
+
+        </ul>
+        <form class="d-flex">
+
+          <ul class="navbar-nav me-3 mb-2 mt-3 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+          </ul>
+
+          <a class="btn btn-outline-dark rounded-3 pt-1" href="/contact-form">Contact me</a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+    <!-- blog -->
+    <div class="blog-detail">
+        <div id="blog-detail-container">
+          <h1>{{addBlog.name}}</h1>
+
+          <div class="above">
+              <div class="gambar">
+                <img src="../public/assets/image/surface-rkr_jnaGzIk-unsplash.jpg" alt="detail" />
+              </div>
+               
+              <div class="keterangan">
+
+                <label for="time" ></label>
+                <div id="time">
+                
+                    <div class="date">
+                        <h2>Duration</h2>
+                        <div class="durasi">
+
+                            <img src="../public/assets/image/calender.png">
+                            <p>{{addBlog.start_date}} - {{addBlog.end_date}} </p> 
+    
+                        </div>
+
+                       <div class="bulan">
+
+                        <img src="../public/assets/image/jam.png">
+                        <p>{{addBlog.duration}}</p>
+
+                       </div>
+
+                    </div>
+
+                    <div class="tech">
+                        <h2>Technologies</h2>
+                        <div class="tech-icon">
+                        <i class="{{addBlog.android}}"></i>
+                        <i class="{{addBlog.ios}}"></i>
+                        <i class="{{addBlog.linux}}"></i>
+                        <i class="{{addBlog.windows}}"></i>
+
+                       </div>
+
+                    </div>
+                       
+
+                </div>
+
+              </div>
+                
+          </div>
+          
+          <p>
+           {{addBlog.content}}
+          </p>
+        </div>
+      </div>
+     
+
+</body>
+</html>

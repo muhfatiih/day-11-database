@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    background-color: #ced4da !important;
+
+}
+
+/* navbar start */
+nav {
+    font-family: 'Montserrat', sans-serif;    
+    font-weight: 600;
+}
+
+.container-xxl {
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+  max-width: 1881px !important ;
+}
+
+.btn {
+    margin-top: 16px;
+    background-color: #000000 !important;
+    color: #dbdbdb !important;
+    font-weight: 700 !important;
+    transition: all 4ms black;
+}
+
+/* Creating Card */
+.main {
+    height: 91%;
+    display: flex;
+}
+
+
+.box {
+    border: 0px solid black;
+    padding: 5px;
+    width: 60%;
+    margin: 100px auto;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;    
+    box-shadow: 0px 0px 30px #00000031;
+    background-color: white;
+    display: flex;
+    height:fit-content ;
+    justify-content: center;
+    
+
+}
+
+.box .content {
+    padding: 30px 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: fit-content;
+}
+
+.content .main-left-side {
+    display: flex;
+    flex: 50%;
+    padding: 10px 40px;
+    flex-direction: column;
+    justify-content: left;
+    
+
+}
+
+.content .main-right-side {
+    display: flex;
+    flex: 30%;
+
+}
+
+.content .title {
+    font-weight:900;
+    font-size: x-large;
+}
+
+.box .contact{
+    padding-top: 10px;
+
+}
+
+.box .contact .button {
+    padding: 6px 20px ;
+    border: none;
+    background-color: black;
+    width: fit-content;
+    border-radius: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px ;
+    color:white ;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+.box .contact .button:hover {
+    background-color: #807474;
+    transition: all 0.4s;
+}
+
+.contact .button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .myphoto{
+    border: 0px solid black;
+    width: 270px ;
+    margin: auto;
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: 0px 0px 30px #807474;
+}
+
+.box .myphoto img {
+ width: 100%;
+ border-radius: 7px 7px 0px 0px;
+}
+
+.box .myphoto h3 {
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;  
+    font-weight: 700;  
+    padding-top: 7px;
+}
+
+.box .myphoto p {
+    font-size: small;
+    /* padding-bottom: 5px; */
+    font-family: 'Montserrat', sans-serif;    
+}
+
+span p {
+    display: inline;
+    font-family: 'Montserrat', sans-serif;    
+    font-weight: bold;
+
+}
+
+span i {
+    display: inline;
+}
+
+
+.icon i{
+    /* padding: 30px; */
+    padding-top: 30px;
+    /* justify-content: space-between; */
+    width: 100px;
+    /* background-color: blue; */
+}
+
+.icon {
+ display: flex; 
+ padding: 27px 0px;
+
+ 
+}
+
+.icon a {
+    color: black;
+}
+
+
+/* end creating card */
+
+/* blog list start */
+
+.blog{
+    align-items: center;
+  }
+.list-place {
+  
+    display: flex;
+
+}
+
+.row {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  justify-content: center;
+}
+
+.row-cols-md-3 > * {
+  width: 25.5% !important;
+}
+
+  .blog-list {
+    margin: 80px 100px 0px 240px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100% ;
+    padding: 40px;
+  }
+  
+  .blog .blog-list .blog-list-item {
+    width: 300px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    background-color: #f7f7f7;
+    box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.4)
+  }
+
+  .duration {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    opacity: 0.6;
+  }
+  
+  .blog .blog-list .blog-list-item .blog-image {
+    flex: 1;
+  }
+  
+  .blog .blog-list .blog-list-item .blog-image img {
+    width: 100% ;
+    height: 180px;
+    object-fit:contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .blog .blog-list .blog-list-item .blog-content {
+   
+    flex: 2;
+  }
+  
+  .blog .blog-list .btn-group {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+  }
+  
+  .blog .blog-list .btn-group .btn-edit {
+    padding: 5px 7px;
+    border: 0;
+    border-radius: 4px;
+    background: #dbdbdb;
+    width: 50%;
+    font-family: 'Outfit', sans-serif;
+    margin: 5px;
+  }
+  
+  .blog .blog-list .btn-group .btn-post {
+    padding: 5px 7px;
+    border: 0;
+    border-radius: 4px;
+    background: #ec4d37;
+    color: #fff;
+    width: 50%;
+    font-family: 'Outfit', sans-serif;
+    margin: 5px;
+  }
+  
+  .blog .blog-list h1 a {
+    text-decoration: none;
+    color: #000000;
+    font-size:large;
+  }
+
+  .blog .blog-list h1 {
+    margin-bottom: 7px;
+    font-family: 'Fjalla One', sans-serif; 
+  }
+  
+  .blog .blog-list .detail-blog-content {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  
+  .blog .blog-list .blog-list-item p {
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align:left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+            line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-family: 'Manrope', sans-serif;
+
+  }
+  
+  .os {
+    display: flex;
+    flex: 1;
+  }
+
+  .os input {
+    padding: 0px ;
+    flex-direction: column;
+
+  }
+
+  .date{
+    display: flex;
+  }
+
+  .OSicon img {
+    width: 27px;
+    margin: 0px 5px;
+    margin-bottom: 10px ;
+    
+  }
+
+  .OSicon {
+    padding: 3px;
+  }
+
+  span {
+    padding-bottom: 10px;
+  }
+
+  .btn {
+    border-radius: 7px !important;
+  }
+
+  .btn a {
+    text-decoration: none;
+    color: #dbdbdb;
+  }
+
+  .btn:hover {
+    background-color: #dbdbdb !important;
+  }
+
+  /* project start */
+  .box-list-group {
+    margin-left: 50px;
+}
+
+
+.box-list {
+    padding: 10px;
+    width: 400px;
+}
+
+.card-list-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+  /* project end */
