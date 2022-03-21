@@ -1,4 +1,8 @@
 const express = require ('express');
+const bcrypt = require ('bcrypt');
+const session = require('express-session');
+const flash = require('express-flash');
+
 
 // database connect //
 const db = require('./connection/db');
@@ -66,6 +70,17 @@ app.listen(port, function() {
 
 app.set('view engine', 'hbs');
 
+app.use(flash());
+
+app.use(
+  session({
+    secret: 'myFault',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+  })
+);
+
 app.use('/public', express.static(__dirname+ '/public'));
 
 app.use(express.urlencoded({ extended: false }));
@@ -112,7 +127,7 @@ app.post('/login', function (req, res) {
     db.connect(function (err, client, done) {
       if (err) throw err;
   
-      const query = `SELECT * FROM tb_project WHERE email = '${data.email}'`;
+      const query = `SELECT * FROM tb_user WHERE email = '${data.email}'`;
   
       client.query(query, function (err, result) {
         if (err) throw err;
@@ -163,7 +178,7 @@ app.post('/register', function (req, res) {
     db.connect(function (err, client, done) {
       if (err) throw err;
   
-      const query = `INSERT INTO tb_project(name,email,password) VALUES ('${data.name}','${data.email}','${hashedPassword}')`;
+      const query = `INSERT INTO tb_user(name,email,password) VALUES ('${data.name}','${data.email}','${hashedPassword}')`;
   
       client.query(query, function (err, result) {
         if (err) throw err;
