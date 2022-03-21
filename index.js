@@ -112,7 +112,7 @@ app.post('/login', function (req, res) {
     db.connect(function (err, client, done) {
       if (err) throw err;
   
-      const query = `SELECT * FROM tb_user WHERE email = '${data.email}'`;
+      const query = `SELECT * FROM tb_project WHERE email = '${data.email}'`;
   
       client.query(query, function (err, result) {
         if (err) throw err;
@@ -163,7 +163,7 @@ app.post('/register', function (req, res) {
     db.connect(function (err, client, done) {
       if (err) throw err;
   
-      const query = `INSERT INTO tb_user(name,email,password) VALUES ('${data.name}','${data.email}','${hashedPassword}')`;
+      const query = `INSERT INTO tb_project(name,email,password) VALUES ('${data.name}','${data.email}','${hashedPassword}')`;
   
       client.query(query, function (err, result) {
         if (err) throw err;
@@ -284,6 +284,33 @@ app.get ('/blog-delete/:id' , (req,res) => {
 
 });
 
+app.get ('/blog-edit/:id', (req,res) => {
+  res.render('edit')
+})
+
+app.post ('/blog-edit/:id' , (req,res) => {
+  let id = req.params.id;
+
+  db.connect(function (err, client , done) {
+      const query = `UPDATE FROM public.tb_project
+      WHERE id= ${id}`;    
+      
+      client.query(query, function (err, result) {
+          if (err) throw err;
+          done();
+
+          let blog = result.rows[0];
+
+          blog = {
+              ...blog,
+          };
+         
+
+      })
+      res.redirect ('/')
+  })
+
+});
 
 function getDayDifference(startDate,endDate) {
     const date1 = new Date(startDate) 

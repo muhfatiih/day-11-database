@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="stylesheet" href="../public/assets/css/navbarstyle.css">
+     <link rel="stylesheet" href="../public/assets/css/blog.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Document</title>
@@ -26,9 +26,9 @@
           </li>
 
         </ul>
-        <form class="d-flex">
+        {{!-- <form class="d-flex"> --}}
 
-          <ul class="navbar-nav me-3 mb-2 mt-3 mb-lg-0">
+          <ul class="navbar-nav me-3 mb-2 mt-0 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/login">Login</a>
         </li>
@@ -37,31 +37,45 @@
         </li>
           </ul>
 
-          <a class="btn btn-outline-dark rounded-3 pt-1" href="/contact-form">Contact me</a>
+          <a class="btn btn-outline-dark rounded-3 pt-1" href="/contact-me">Contact me</a>
         </form>
       </div>
     </div>
   </nav>
 
-  <div class="mb-3">
-      <label for="formGroupExampleInput" class="form-label">Name</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" name="name">
-  </div>
+  <div class="blog">
+        <div class="blog-form">
+          <div class="form-container">
+            <form action='/project' method="post"> 
 
-  <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
-  </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="please text your name" name="name">
+                    </div>
 
-  <div class="mb-3 ">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label> 
-      <input type="password" class="form-control" id="inputPassword" name="password">
-  
-  </div>
+                    <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+                    </div>
 
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Submit form</button>
-  </div>
+                    <div class="mb-3 ">
+                         <label for="inputPassword" class="col-sm-2 col-form-label">Password</label> 
+                        <input type="password" class="form-control" id="inputPassword" name="password">
+                    
+                    </div>
+
+                    <div class="col-12">
+                      <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+           
+            </form>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+
+ 
     
 </body>
 </html>

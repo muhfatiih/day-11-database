@@ -5,7 +5,7 @@
 body {
     margin: 0;
     background-color: #ced4da !important;
-
+    line-height: none !important;
 }
 
 /* navbar start */
@@ -28,6 +28,9 @@ nav {
     transition: all 4ms black;
 }
 
+.d-flex {
+  line-height: none !important;
+}
 /* Creating Card */
 .main {
     height: 91%;
