@@ -49,27 +49,27 @@
               <p class="title">ADD MY PROJECT</p>
               <div>
                 <label for="input-blog-title">Project Name</label>
-                <input id="input-blog-title" name="title" />
+                <input id="input-blog-title" name="title" value="{{addBlog.name}}"/>
               </div>
              <div class="date">
               <div  class="start-date">
   
                 <label for="input-start-date">Start Date</label>     
-                <input type="date" id="input-start-date" name="startDate" >
+                <input type="date" id="input-start-date" name="startDate" value="{{addBlog.start_date}}" >
   
               </div>
               
               <div  class="end-date">
                 
                 <label for="input-end-date">End Date</label>
-                <input type="date" id="input-end-date" name="endDate">
+                <input type="date" id="input-end-date" name="endDate" value="{{addBlog.end_date}}">
               
               </div>
             </div>
   
               <div>
                 <label for="input-blog-content">Content</label>
-                <textarea id="input-blog-content" name="content" value="{{}}"></textarea>
+                <textarea id="input-blog-content" name="content" value="{{addBlog.description}}"></textarea>
               </div>
   
               <label for="operation-system">Technologies</label>

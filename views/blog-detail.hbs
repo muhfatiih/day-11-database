@@ -33,7 +33,7 @@
           </li>
 
         </ul>
-        <form class="d-flex">
+        {{!-- <form class="d-flex"> --}}
 
           <ul class="navbar-nav me-3 mb-2 mt-3 mb-lg-0">
         <li class="nav-item">
@@ -58,7 +58,7 @@
 
           <div class="above">
               <div class="gambar">
-                <img src="../public/assets/image/surface-rkr_jnaGzIk-unsplash.jpg" alt="detail" />
+                <img src="../uploads/{{addBlog.image}}" alt="detail" />
               </div>
                
               <div class="keterangan">
@@ -104,7 +104,7 @@
           </div>
           
           <p>
-           {{addBlog.content}}
+           {{addBlog.description}}
           </p>
         </div>
       </div>
