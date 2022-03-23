@@ -122,11 +122,12 @@ db.connect(function (err, client, done) {
       
       req.session.isLogin = true;
       req.session.user = {
-        id: result.rows[0].id,
+        id: result.rows[0].id_user,
         email: result.rows[0].email,
         name: result.rows[0].name,
     };
     
+    console.log (req.session.user)
     
     res.redirect('/');
   });
@@ -142,14 +143,14 @@ db.connect(function (err, client, done) {
         let query = ''; 
 
         if (req.session.isLogin) {
-          query = `SELECT tb_project.*, tb_user.id_user , tb_user.email,tb_user.name
+          query = `SELECT tb_project.*, tb_user.id_user, tb_user.email, tb_user.user_name 
                     FROM tb_project
-                    LEFT JOIN tb_user ON tb_user.id_user = tb_project.user_id
+                    LEFT JOIN tb_user ON tb_user.id_user = tb_project.id
                     WHERE tb_user.id_user=${req.session.user.id}`;
         } else {
-          query = `SELECT tb_project.*,tb_user.name , tb_user.email, tb_user.name
+          query = `SELECT tb_project.*,tb_user.id_user , tb_user.email, tb_user.user_name
                     FROM tb_project 
-                    LEFT JOIN tb_user ON tb_user.id_user = tb_project.user_id`;
+                    LEFT JOIN tb_user ON tb_user.id_user = tb_project.id`;
         }
 
         console.log (query)
@@ -220,11 +221,7 @@ db.connect(function (err, client, done) {
     db.connect(function (err, client, done) {
       if (err) throw err;
       
-      let title = req.body.title
-      let startDate = req.body.startDate
-      let endDate = req.body.endDate
-      let duration = getDayDifference(startDate,endDate)
-      let content = req.body.content
+      let data= req.body
       let android = req.body.android
       let ios = req.body.ios
       let linux = req.body.linux
@@ -236,12 +233,7 @@ db.connect(function (err, client, done) {
       //   <i class="${windows}"> </i>`];
         
         let addProject = {
-          title,
-          startDate,
-          endDate,
-          content,
-          // technologies,
-          duration,
+          ...data
         };
         console.log(addProject.getLogo)
         project.push(addProject)
@@ -256,10 +248,9 @@ db.connect(function (err, client, done) {
         '${addProject.endDate}', 
         '${addProject.content}',
         '${req.file.filename}',
-        
         '${addProject.duration}')`
         
-        console.log(query)
+        console.log(req.file.filename)
         client.query(query, (err, result) => {
           done();
             if (err) throw err;
@@ -355,8 +346,7 @@ db.connect(function (err, client, done) {
     let id = req.params.id;
 
     db.connect(function (err, client , done) {
-      const query = `UPDATE FROM public.tb_project
-      WHERE id= ${id}`;    
+          
       
       client.query(query, function (err, result) {
         if (err) throw err;
@@ -367,12 +357,26 @@ db.connect(function (err, client, done) {
           blog = {
             ...blog,
           };
-          
-          
-        })
-        res.redirect ('/')
-      })
-      
+
+         const query = `UPDATE FROM public.tb_project
+        WHERE id= ${id}
+        (name,start_date,end_date,description,image,duration)
+        VALUES 
+        ('${addProject.title}', 
+        '${addProject.startDate}', 
+        '${addProject.endDate}', 
+        '${addProject.content}',
+        '${req.file.filename}',
+        '${addProject.duration}')`
+        
+        console.log(req.file.filename)
+        client.query(query, (err, result) => {
+          done();
+            if (err) throw err;
+            res.redirect('/');
+          });
+        });
+      });
     });
     
     function getDayDifference(startDate,endDate) {

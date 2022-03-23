@@ -26,6 +26,10 @@
 
         </ul>
 
+            {{#if isLogin}}
+          <span class="pb-0 pe-4">{{user.name}}</span>
+          <a href='/logout' class='nav-auth text-orange pe-4'>Logout</a>
+           {{else}}
           <ul class="navbar-nav me-3 mb-2 mt-0 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/login">Login</a>
@@ -34,6 +38,7 @@
           <a class="nav-link" href="/register">Register</a>
         </li>
           </ul>
+          {{/if}}
 
           <a class="btn btn-outline-dark rounded-3 pt-1" href="/contact-form">Contact me</a>
         </form>
